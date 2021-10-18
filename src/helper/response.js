@@ -1,11 +1,11 @@
 export default function (res, req) {
   return function ({ data, message, error, statusCode }) {
     const response = !error
-      ? { data, message: req.translate(message), statusCode: statusCode || 200 }
+      ? {  message: req.translate(message), statusCode: statusCode || 200, data, }
       : {
-          data,
           message: req.translate(error.message),
           statusCode: error.code || statusCode,
+          data,
         };
     return res.status(response.statusCode).json(response);
   };

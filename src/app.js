@@ -7,6 +7,7 @@ import Database from './models';
 import langs from './middlewares/langs';
 import _404 from './middlewares/_404';
 import _500 from './middlewares/_500';
+import Services from './services'
 
 export let app = null;
 export let server = null;
@@ -17,6 +18,7 @@ function run() {
 
   app = express();
   const { db } = new Database();
+  const services = Services()
 
   /* Middlewares */
   app.use(express.json());
@@ -26,9 +28,10 @@ function run() {
   app.use(morgan('dev'));
 
   /* Routes */
-  const routes = new Routes(express, db, null);
+  const routes = new Routes(express, db, services);
   const router = express.Router();
   router.use('/users', routes.User);
+  router.use('/crypto', routes.CryptoCurrency)
   app.use(config.versionApi, router);
   /* Error handling */
   app.use(_404());
