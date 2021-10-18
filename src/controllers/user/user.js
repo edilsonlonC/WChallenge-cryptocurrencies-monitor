@@ -9,7 +9,7 @@ export default function (services, db) {
         const dataUser = {
           name, surname, username, password
         }
-        await User.create( dataUser );
+        const user = await User.create( dataUser );
         
         
         return response(
@@ -18,7 +18,7 @@ export default function (services, db) {
         )({
           data: null,
           message: 'user.created',
-          statusCode: 200,
+          statusCode: 201,
         });
       } catch (err) {
         return next(err);
