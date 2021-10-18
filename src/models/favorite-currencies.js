@@ -18,7 +18,7 @@ export default (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'FavoriteCurrency',
-      tableName: 'favorites_currencies',
+      tableName: 'favorite_currencies',
       timestamps: false,
       paranoid: true,
     }

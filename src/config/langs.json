@@ -60,5 +60,9 @@
 		"es": "El campo favorite_currencyId es requerido",
 		"en": "favorite_currencyId field is required"
 
+	},
+	"validators.favoriteCurrency.notExist": {
+		"es": "El tipo de moneda no existe",
+		"en": "Currency type doesn't exist"
 	}
 }

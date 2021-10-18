@@ -11,7 +11,7 @@ const requestBody = {
     username: 'Eddylson2',
     password: '12345',
     passwordConfirmation: '12345',
-    favorite_currencyId: 0,
+    favorite_currencyId: 1,
   },
 };
 const urlCreate = '/api/v1/users/create';
@@ -175,3 +175,17 @@ it('User create with different password', async (done) => {
   expect(response.body).toMatchObject(expectResponse);
   done();
 });
+
+it('User create when favorite currency does not exist', async (done) => {
+  const requestBodyUser = { data: { ...requestBody.data }}
+  requestBodyUser.data.favorite_currencyId = 10000;
+  const response = await  request.post(urlCreate).send(requestBodyUser);
+  const expectResponse = {
+    data: null,
+    statusCode: 400,
+    message: 'El tipo de moneda no existe'
+  }
+  expect(response.status).toBe(400);
+  expect(response.body).toMatchObject(expectResponse)
+  done();
+})

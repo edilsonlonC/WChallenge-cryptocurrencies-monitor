@@ -7,7 +7,7 @@ export default function (services, db) {
       try {
         const {
           body: {
-            data: { name, surname, username, password },
+            data: { name, surname, username, password, favorite_currencyId },
           },
         } = req;
         const dataUser = {
@@ -15,6 +15,7 @@ export default function (services, db) {
           surname,
           username,
           password,
+          favorite_currencyId
         };
         const user = await User.create(dataUser);
 
