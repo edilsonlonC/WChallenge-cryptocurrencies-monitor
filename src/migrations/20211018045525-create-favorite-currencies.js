@@ -11,7 +11,6 @@ export default {
         type: Sequelize.STRING,
       },
       deletedAt: {
-        allowNull: false,
         type: Sequelize.DATE,
       },
     });
