@@ -1,5 +1,6 @@
-import {  Model } from 'sequelize';
-export default  (sequelize, DataTypes) => {
+import { Model } from 'sequelize';
+
+export default (sequelize, DataTypes) => {
   class FavoriteCurrency extends Model {
     /**
      * Helper method for defining associations.
@@ -9,16 +10,18 @@ export default  (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
-  FavoriteCurrency.init({
-    name: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'FavoriteCurrency',
-    tableName: 'favorites_currencies',
-    timestamps: false,
-    paranoid: true
-    
-  });
+  }
+  FavoriteCurrency.init(
+    {
+      name: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: 'FavoriteCurrency',
+      tableName: 'favorites_currencies',
+      timestamps: false,
+      paranoid: true,
+    }
+  );
   return FavoriteCurrency;
 };

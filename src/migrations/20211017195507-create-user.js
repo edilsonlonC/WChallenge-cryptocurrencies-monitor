@@ -10,16 +10,15 @@ export default {
       name: {
         type: Sequelize.STRING,
       },
-      surname:{
+      surname: {
         type: Sequelize.STRING,
       },
-      username:{
+      username: {
         type: Sequelize.STRING,
-        unique: true
-
+        unique: true,
       },
-      password:{
-        type: Sequelize.STRING(512)
+      password: {
+        type: Sequelize.STRING(512),
       },
       createdAt: {
         allowNull: false,

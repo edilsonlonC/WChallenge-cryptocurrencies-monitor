@@ -1,4 +1,5 @@
 import { Model } from 'sequelize';
+
 export default (sequelize, DataTypes) => {
   class CryptoCurrency extends Model {
     /**
@@ -9,14 +10,16 @@ export default (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
-  CryptoCurrency.init({
-  }, {
-    sequelize,
-    modelName: 'CryptoCurrency',
-    tableName: 'cypto_currencies',
-    timestamps: false,
-    paranoid: true
-  });
+  }
+  CryptoCurrency.init(
+    {},
+    {
+      sequelize,
+      modelName: 'CryptoCurrency',
+      tableName: 'cypto_currencies',
+      timestamps: false,
+      paranoid: true,
+    }
+  );
   return CryptoCurrency;
 };

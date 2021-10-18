@@ -17,13 +17,11 @@ function run() {
   app = express();
   const { db } = new Database();
 
-
   /* Middlewares */
   app.use(express.json());
   app.use(helmet());
   app.disable('x-powered-by');
   app.use(langs());
-  
 
   /* Routes */
   const routes = new Routes(express, db, null);

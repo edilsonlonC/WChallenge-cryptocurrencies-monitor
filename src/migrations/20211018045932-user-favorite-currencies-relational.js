@@ -1,4 +1,3 @@
-
 export default {
   up: async (queryInterface, Sequelize) => {
     /**
@@ -9,12 +8,12 @@ export default {
      */
     await queryInterface.addColumn('users', 'favorite_currencyId', {
       type: Sequelize.INTEGER,
-      references:{
+      references: {
         model: 'favorite_currencies',
-        key: 'id'
+        key: 'id',
       },
-      onDelete: 'SET NULL'
-    })
+      onDelete: 'SET NULL',
+    });
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -24,6 +23,6 @@ export default {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.removeColumn('users', 'favorite_currencyId', {})
-  }
+    await queryInterface.removeColumn('users', 'favorite_currencyId', {});
+  },
 };
