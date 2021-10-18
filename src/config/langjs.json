@@ -1,0 +1,16 @@
+{
+	"server.error": {
+		"en": "Unexpected error",
+		"es": "Error inespereado"
+	},
+	"resource.NotFound": {
+		"es": "Recurso no encontrado",
+		"en": "Not Found resource"
+	},
+	"user.created": {
+		"en": "User creates succesfully",
+		"es": "Usuario creado exitosamente"
+	}
+
+		
+}
