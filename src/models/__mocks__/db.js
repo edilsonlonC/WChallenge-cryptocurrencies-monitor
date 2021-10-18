@@ -1,4 +1,3 @@
-
 export const Database = jest.fn();
 
 
