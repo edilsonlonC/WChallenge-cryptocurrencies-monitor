@@ -1,7 +1,6 @@
 import { Model } from 'sequelize';
-
 export default (sequelize, DataTypes) => {
-  class User extends Model {
+  class CryptoCurrency extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -10,19 +9,14 @@ export default (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  }
-  User.init(
-    {
-      userName: DataTypes.STRING,
-      name: DataTypes.STRING,
-      surname: DataTypes.STRING,
-      password: DataTypes.STRING,
-    },
-    {
-      sequelize,
-      modelName: 'User',
-      tableName: 'users',
-    }
-  );
-  return User;
+  };
+  CryptoCurrency.init({
+  }, {
+    sequelize,
+    modelName: 'CryptoCurrency',
+    tableName: 'cypto_currencies',
+    timestamps: false,
+    paranoid: true
+  });
+  return CryptoCurrency;
 };

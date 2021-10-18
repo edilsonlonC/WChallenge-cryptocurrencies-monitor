@@ -17,6 +17,7 @@ function run() {
   app = express();
   const { db } = new Database();
 
+
   /* Middlewares */
   app.use(express.json());
   app.use(helmet());

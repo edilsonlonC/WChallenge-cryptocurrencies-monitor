@@ -1,15 +1,19 @@
 import Sequelize from 'sequelize';
-import configFile from '../config/config.json';
+import configFile from '../config/config-db.js';
 
 /** Models * */
 import User from './user';
-
+import CryptoCurrency from './crypto-currencies.js';
+import FavoriteCurrency from './favorite-currencies.js';
 const env = process.env.NODE_ENV || 'development';
 const config = configFile[env];
 
 export default function () {
   this.models = {
     User,
+    CryptoCurrency,
+    FavoriteCurrency
+
   };
   this.db = {};
   this.sequelize = config.use_env_variable

@@ -45,6 +45,7 @@
     "@babel/runtime": "^7.12.18",
     "babel-polyfill": "^6.26.0",
     "bcrypt": "^5.0.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-validator": "^6.10.0",
     "helmet": "^4.6.0",
