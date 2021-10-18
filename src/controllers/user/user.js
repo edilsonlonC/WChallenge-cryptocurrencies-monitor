@@ -5,13 +5,19 @@ export default function (services, db) {
   return {
     async create(req, res, next) {
       try {
-        const { body: { data : { name, surname, username, password} }} = req;
+        const {
+          body: {
+            data: { name, surname, username, password },
+          },
+        } = req;
         const dataUser = {
-          name, surname, username, password
-        }
-        const user = await User.create( dataUser );
-        
-        
+          name,
+          surname,
+          username,
+          password,
+        };
+        const user = await User.create(dataUser);
+
         return response(
           res,
           req

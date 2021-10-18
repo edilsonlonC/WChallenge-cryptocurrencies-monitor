@@ -1,4 +1,5 @@
 import { validationResult } from 'express-validator';
+
 export default function (req, res, next) {
   const errorValidation = validationResult(req);
   if (!errorValidation.isEmpty()) {
@@ -14,6 +15,7 @@ export default function (req, res, next) {
     }
     return res.status(400).json({
       statusCode: 400,
+      data: null,
       message: req.translate(keyFirstError),
       errors: response,
     });

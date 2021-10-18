@@ -8,7 +8,8 @@ import langs from './middlewares/langs';
 import _404 from './middlewares/_404';
 import _500 from './middlewares/_500';
 
-let app = null;
+export let app = null;
+export let server = null;
 const port = config.port || 9000;
 
 function run() {
@@ -22,7 +23,7 @@ function run() {
   app.use(helmet());
   app.disable('x-powered-by');
   app.use(langs());
-  app.use(morgan('dev'))
+  app.use(morgan('dev'));
 
   /* Routes */
   const routes = new Routes(express, db, null);
@@ -33,10 +34,9 @@ function run() {
   app.use(_404());
   app.use(_500());
 
-  app.listen(port, () => {
+  server = app.listen(port, () => {
     console.log(`Server running`);
   });
 }
 
 run();
-export default app;

@@ -20,12 +20,11 @@ export default (sequelize, DataTypes) => {
       surname: DataTypes.STRING,
       password: {
         type: DataTypes.STRING(512),
-        set(value){
+        set(value) {
           const saltRounds = 10;
-          this.setDataValue('password', bcrypt.hashSync(value, saltRounds))
-        }
-
-      }
+          this.setDataValue('password', bcrypt.hashSync(value, saltRounds));
+        },
+      },
     },
     {
       sequelize,
@@ -35,7 +34,7 @@ export default (sequelize, DataTypes) => {
   );
   User.prototype.comparePassword = async function (password) {
     const passwordHash = this.setDataValue('password');
-    return bcrypt.compareSync(password, passwordHash)
-  }
+    return bcrypt.compareSync(password, passwordHash);
+  };
   return User;
 };

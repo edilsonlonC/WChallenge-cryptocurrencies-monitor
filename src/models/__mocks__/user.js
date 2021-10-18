@@ -1,5 +1,5 @@
-
-
 export const mockUser = {
-    create(data){ return data } 
-}
+  create(data) {
+    return data;
+  },
+};

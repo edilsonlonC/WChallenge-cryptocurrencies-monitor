@@ -11,6 +11,54 @@
 	"user.created": {
 		"es": "Usuario creado exitosamente",
 		"en": "User created succesfully"
-	}
+	},
+	"validators.data.Object": {
+		"es": "Data es debe ser un objeto",
+		"en": "Data should be an object"
+	},
+	"validators.data.name.isRequired": {
+		"es": "El campo name es requerido",
+		"en": "Name field is required"
+	},
+	"validators.data.name.minLength": {
+		"en": "Minimo de caracteres requeridos para el campo name",
+		"es": "Minimum characters required for the name field"
+	},
+	"validators.data.surname.isRequired": {
+		"es": "El campo surname es requerido",
+		"en": "surname field is required"
+	},
+	"validators.data.surname.minLength": {
+		"en": "Minimo de caracteres requeridos para el campo surname",
+		"es": "Minimum characters required for the surname field"
+	},
+	"validators.data.username.isRequired": {
+		"es": "El campo username es requerido",
+		"en": "username field is required"
+	},
+	"validators.data.username.minLength": {
+		"es": "Minimo de caracteres requeridos para el campo username",
+		"en": "Minimum characters required for the username field"
+	},
+	"validators.data.password.isRequired": {
+		"es": "El campo password es requerido",
+		"en": "password field is required"
 
+	},
+
+	"validators.data.passwordConfirmation.isRequired": {
+		"es": "El campo passwordConfirmation es requerido",
+		"en": "passwordConfirmation field is required"
+
+	},
+	"validators.data.passwordConfirmation.notMatch": {
+		"es": "Las contraseñas no coinciden",
+		"en": "Passwords don't match"
+
+	},
+	"validators.data.favorite_currencyId.isRequired": {
+		"es": "El campo favorite_currencyId es requerido",
+		"en": "favorite_currencyId field is required"
+
+	}
 }
