@@ -1,4 +1,6 @@
 import { Model } from 'sequelize';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 export default (sequelize, DataTypes) => {
   class User extends Model {
@@ -16,7 +18,14 @@ export default (sequelize, DataTypes) => {
       userName: DataTypes.STRING,
       name: DataTypes.STRING,
       surname: DataTypes.STRING,
-      password: DataTypes.STRING,
+      password: {
+        type: DataTypes.STRING(512),
+        set(value){
+          const saltRounds = 10;
+          this.setDataValue('password', bcrypt.hashSync(value, saltRounds))
+        }
+
+      }
     },
     {
       sequelize,
@@ -24,5 +33,9 @@ export default (sequelize, DataTypes) => {
       tableName: 'users',
     }
   );
+  User.prototype.comparePassword = async function (password) {
+    const passwordHash = this.setDataValue('password');
+    return bcrypt.compareSync(password, passwordHash)
+  }
   return User;
 };

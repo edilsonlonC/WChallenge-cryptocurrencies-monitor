@@ -22,6 +22,7 @@ function run() {
   app.use(helmet());
   app.disable('x-powered-by');
   app.use(langs());
+  app.use(morgan('dev'))
 
   /* Routes */
   const routes = new Routes(express, db, null);
