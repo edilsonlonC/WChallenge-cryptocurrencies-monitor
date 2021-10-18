@@ -6,6 +6,10 @@
 	"resource.NotFound": {
 		"es": "Recurso no encontrado",
 		"en": "Not Found resource"
+	},
+	"user.created": {
+		"en": "User creates succesfully",
+		"es": "Usuario creado exitosamente"
 	}
 
 		
