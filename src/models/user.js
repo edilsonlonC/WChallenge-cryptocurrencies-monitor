@@ -71,7 +71,7 @@ export default (sequelize, DataTypes) => {
       username: user.username,
       surname: user.surname,
     };
-    return jwt.sign(payload, config.secretKeyJwt);
+    return jwt.sign(payload, config.secretKeyJwt, { expiresIn: '40s'});
   };
 
   /**
@@ -80,7 +80,11 @@ export default (sequelize, DataTypes) => {
    * @returns {object}
    */
   User.verifyJWT = async function (token) {
-    return jwt.verify(token, config.secretKeyJwt);
+    try {
+      return { payload: jwt.verify(token, config.secretKeyJwt), isValid: true };
+    } catch (err) {
+      return { isValid: false, payload: {} };
+    }
   };
 
   /**

@@ -25,16 +25,34 @@ export default function (services, db) {
         req.token = token;
         req.User = user.toJSON();
         delete req.User.password;
-        return next();
-        // if (!authorization || !authorization.toLowerCase().startsWith('bearer'))
-        //     return response(res,req)({
-        //         data: null,
-        //         error: new Error(401,'validators.Authorization.isRequired')
-        //     })
+        return next();  
       } catch (error) {
         return next(error);
       }
     },
-    async checkAuth(req, res, next) {},
+    async checkAuth(req, res, next) {
+        const authorization = req.headers.authorization;
+        try {
+
+            if (!authorization || !authorization.toLowerCase().startsWith('bearer'))
+                return response(res,req)({
+                    data: null,
+                    error: new Error(401, 'validators.Authorization.isRequired')
+                })
+            const token = authorization.split(' ')[1]
+            const verify = await User.verifyJWT(token);
+            if (!verify.isValid) return response(res,req)({
+                data: null,
+                error: new Error(401, 'validators.token.invalid')
+            })
+            const { username } = verify.payload;
+            req.User = await User.findByUsername(username)
+            return next()
+            
+        } catch (error) {
+            return next(error)
+            
+        }
+    },
   };
 }

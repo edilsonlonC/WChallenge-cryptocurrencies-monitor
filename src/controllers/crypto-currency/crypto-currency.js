@@ -4,7 +4,8 @@ export default function (services, db) {
   return {
     async list(req, res, next) {
       try {
-        const data = await services.coinGecko.getCoins('ars');
+        const { Currency } = req.User;
+        const data = await services.coinGecko.getCoins(Currency.name);
         const cryptoCurrencies = data.data.map((d) => ({
           id: d.id,
           symbol: d.symbol,
