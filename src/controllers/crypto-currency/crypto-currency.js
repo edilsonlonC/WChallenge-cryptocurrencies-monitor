@@ -6,7 +6,7 @@ export default function (services, db) {
     async list(req, res, next) {
       try {
         const { Currency } = req.User;
-        const data = await services.coinGecko.getCoins(Currency.name);
+        const data = await services.coinGecko.getCoins({ currency: Currency.name});
         const cryptoCurrencies = data.data.map((d) => ({
           id: d.id,
           symbol: d.symbol,
@@ -19,7 +19,7 @@ export default function (services, db) {
           res,
           req
         )({
-          data: { CryptoCurrencies: cryptoCurrencies },
+          data: { count: cryptoCurrencies.length, CryptoCurrencies: cryptoCurrencies },
           message: 'cryptocurrencies.list',
         });
       } catch (error) {

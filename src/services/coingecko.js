@@ -8,9 +8,11 @@ export default function coinGeckoService() {
     ping: async () => {
       return await coingGeckoClient.ping();
     },
-    getCoins: async (currency) => {
+    getCoins: async ({ currency, ids, perPage }) => {
       return await coingGeckoClient.coins.markets({
         vs_currency: currency,
+        ids: ids  || [],
+        per_page: perPage || 100
       });
     },
   };
