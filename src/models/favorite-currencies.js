@@ -9,6 +9,9 @@ export default (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      FavoriteCurrency.hasMany(models.User, {
+        foreignKey: 'favorite_currencyId',
+      });
     }
   }
   FavoriteCurrency.init(
