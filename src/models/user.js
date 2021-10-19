@@ -16,6 +16,7 @@ export default (sequelize, DataTypes) => {
         foreignKey: 'favorite_currencyId',
         as: 'Currency',
       });
+      User.hasMany(models.CryptoCurrency, { foreignKey: 'userId'})
     }
   }
   User.init(
@@ -71,7 +72,7 @@ export default (sequelize, DataTypes) => {
       username: user.username,
       surname: user.surname,
     };
-    return jwt.sign(payload, config.secretKeyJwt, { expiresIn: '40s'});
+    return jwt.sign(payload, config.secretKeyJwt, { expiresIn: '1h'});
   };
 
   /**
