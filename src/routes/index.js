@@ -1,10 +1,12 @@
 import User from './user';
 import CryptoCurrency from './cypto-currency';
+import Auth from './auth';
 
 export default function (app, db, services = null) {
   this.routes = {
+    Auth,
+    CryptoCurrency,
     User,
-    CryptoCurrency
   };
   this.associate = function () {
     const names = Object.keys(this.routes);

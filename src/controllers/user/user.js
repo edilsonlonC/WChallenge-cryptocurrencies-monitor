@@ -15,7 +15,7 @@ export default function (services, db) {
           surname,
           username,
           password,
-          favorite_currencyId
+          favorite_currencyId,
         };
         const user = await User.create(dataUser);
 
