@@ -30,3 +30,11 @@ export const mockUser = {
 Object.prototype.generateJWT = function(){
   return 'valid:token'
 }
+
+Object.prototype.comparePassword = function(password){
+  return this.password === password
+}
+
+Object.prototype.toJSON = function(){
+  return this
+}
