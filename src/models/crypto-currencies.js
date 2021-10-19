@@ -9,6 +9,7 @@ export default (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      CryptoCurrency.belongsTo(models.User, { foreignKey: 'userId'})
     }
   }
   CryptoCurrency.init(
@@ -16,7 +17,7 @@ export default (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'CryptoCurrency',
-      tableName: 'cypto_currencies',
+      tableName: 'crypto_currencies',
       timestamps: false,
       paranoid: true,
     }
