@@ -1,6 +1,7 @@
 import response from '../../helper/response';
 
 export default function (services, db) {
+  const { CryptoCurrency } = db;
   return {
     async list(req, res, next) {
       try {
@@ -25,5 +26,25 @@ export default function (services, db) {
         return next(error);
       }
     },
+  async create(req, res, next){
+      const userId= req.User?.id
+      console.log(req.User, 'user', req.User.id)
+      const { data: { id }} = req.body;
+    try{
+       await CryptoCurrency.create({
+         id,
+         userId
+       })
+       return response(res,req)({
+         data: null,
+         message: 'crypto.created',
+         statusCode: 201
+       }) 
+
+    }catch(error){
+      return next(error)
+    }
+
+  }
   };
 }
