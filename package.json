@@ -4,7 +4,7 @@
   "description": "Challenge Wolox",
   "main": "index.js",
   "scripts": {
-    "test": "jest --collect-coverage  --verbose",
+    "test": "jest --collect-coverage  --verbose --silent --detectOpenHandles --maxWorkers=1",
     "build": "webpack --config webpack.config.js",
     "start": "babel-node src/app.js",
     "dev": "nodemon --exec babel-node src/app.js",

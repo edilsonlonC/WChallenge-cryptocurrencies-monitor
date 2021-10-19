@@ -15,9 +15,7 @@ const requestBody = {
   },
 };
 const urlCreate = '/api/v1/users/create';
-afterAll(() => {
-  server.close();
-});
+
 it('User created should be success', async (done) => {
   const requestBodyUser = { data: { ...requestBody.data } };
   const response = await request.post(urlCreate).send(requestBodyUser);
@@ -179,4 +177,7 @@ it('User create when favorite currency does not exist', async (done) => {
   expect(response.status).toBe(400);
   expect(response.body).toMatchObject(expectResponse);
   done();
+});
+afterAll(() => {
+  server.close();
 });
