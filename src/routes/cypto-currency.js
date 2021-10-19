@@ -6,5 +6,6 @@ export default function (app, db, services) {
   const auth = authMiddleware(services,db);
   /** TODO: move checkAuth to validator */
   router.get('/currencies',auth.checkAuth ,cryptoCurrencyController.list);
+  router.post('/currencies', auth.checkAuth, cryptoCurrencyController.create )
   return router;
 }
