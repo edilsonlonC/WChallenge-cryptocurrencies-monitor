@@ -46,7 +46,8 @@ export default function (services, db) {
                 error: new Error(401, 'validators.token.invalid')
             })
             const { username } = verify.payload;
-            req.User = await User.findByUsername(username)
+            const user  = await User.findByUsername(username)
+            req.User = user.toJSON()
             return next()
             
         } catch (error) {
