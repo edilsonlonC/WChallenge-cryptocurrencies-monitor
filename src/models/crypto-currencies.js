@@ -9,7 +9,7 @@ export default (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      CryptoCurrency.belongsTo(models.User, { foreignKey: 'userId'})
+      CryptoCurrency.belongsTo(models.User, { foreignKey: 'userId' });
     }
   }
   CryptoCurrency.init(
