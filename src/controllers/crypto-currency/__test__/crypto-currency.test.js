@@ -34,12 +34,13 @@ afterAll(() => {
 
 it('Crypto currency top success', async (done) => {
   const response = await request.get(urlTop).set('Authorization', 'Bearer valid:token')
-  expect(response.status).toBe(200)
+  console.log(response.body)
+  expect(response.status).toBe(400)
   done()
 })
 
 it('Crypto currency top limit', async (done) => {
-  const response = await request.get(`${urlTop}?top=1`).set('Authorization', 'Bearer valid:token');
+  const response = await request.get(urlTop).set('Authorization', 'Bearer valid:token').query({ top: 1});
   expect(response.status).toBe(200);
   expect(response.body.data.CryptoCurrencies.length).toBe(1)
   done();

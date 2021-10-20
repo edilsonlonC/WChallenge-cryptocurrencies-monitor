@@ -1,13 +1,12 @@
 import controllerCryptoCurrency from '../controllers/crypto-currency/crypto-currency';
-import authMiddleware from '../middlewares/auth';
-
+import Validator from '../validators/crypto-currency';
 export default function (app, db, services) {
   const router = app.Router();
   const cryptoCurrencyController = controllerCryptoCurrency(services, db);
-  const auth = authMiddleware(services, db);
+  const validator = Validator(services, db);
   /** TODO: move checkAuth to validator */
-  router.get('/currencies', auth.checkAuth, cryptoCurrencyController.list);
-  router.post('/currencies', auth.checkAuth, cryptoCurrencyController.create);
-  router.get('/currencies/top', auth.checkAuth, cryptoCurrencyController.top);
+  router.get('/currencies',validator.list, cryptoCurrencyController.list);
+  router.post('/currencies',validator.create ,cryptoCurrencyController.create);
+  router.get('/currencies/top',validator.top ,cryptoCurrencyController.top);
   return router;
 }
