@@ -33,7 +33,6 @@ export default function (services, db) {
     },
   async create(req, res, next){
       const userId= req.User?.id
-      console.log(req.User, 'user', req.User.id)
       const { data: { id }} = req.body;
     try{
        await CryptoCurrency.create({

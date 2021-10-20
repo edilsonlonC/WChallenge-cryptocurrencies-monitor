@@ -3,10 +3,7 @@ import CoinGecko from 'coingecko-api';
 export default function coinGeckoService() {
   const coinGeckoClient = new CoinGecko();
 
-  return {
-    ping: async () => {
-      return await coinGeckoClient.ping();
-    },
+  return { 
     getCoins: async ({ currency, ids, perPage, order, page }) => {
       const orderBy = {
         top_asc: 'market_cap_asc',
