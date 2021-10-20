@@ -1,5 +1,4 @@
 export const users = [
-
   {
     id: 1,
     name: 'Edilson',
@@ -10,31 +9,33 @@ export const users = [
     favorite_currencyId: 1,
     token: 'valid:token',
     Currency: {
-      name: 'eur'
-    }
+      name: 'eur',
+    },
   },
-]
+];
 
 export const mockUser = {
   create(data) {
     return data;
   },
-  verifyJWT(token){
-    return token === 'valid:token' ? { isValid: true, payload: users.find(user => user.token === token)} : { isValid: false, payload: {}}
+  verifyJWT(token) {
+    return token === 'valid:token'
+      ? { isValid: true, payload: users.find((user) => user.token === token) }
+      : { isValid: false, payload: {} };
   },
-  findByUsername(username){
-    return users.find(user => user.username === username)
-  }
+  findByUsername(username) {
+    return users.find((user) => user.username === username);
+  },
 };
 
-Object.prototype.generateJWT = function(){
-  return 'valid:token'
-}
+Object.prototype.generateJWT = function () {
+  return 'valid:token';
+};
 
-Object.prototype.comparePassword = function(password){
-  return this.password === password
-}
+Object.prototype.comparePassword = function (password) {
+  return this.password === password;
+};
 
-Object.prototype.toJSON = function(){
-  return this
-}
+Object.prototype.toJSON = function () {
+  return this;
+};

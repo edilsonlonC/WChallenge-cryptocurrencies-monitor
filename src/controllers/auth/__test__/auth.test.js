@@ -20,28 +20,28 @@ it('login success', async (done) => {
   done();
 });
 
-it('login password incorrect', async(done) => {
-    const requestLogin = {
+it('login password incorrect', async (done) => {
+  const requestLogin = {
     data: {
       username: 'Eddylson2',
       password: '123455',
     },
   };
   const response = await request.post(urlLogin).send(requestLogin);
-  expect(response.status).toBe(401)
-  done()
-})
-it('login username incorrect', async(done) => {
-    const requestLogin = {
+  expect(response.status).toBe(401);
+  done();
+});
+it('login username incorrect', async (done) => {
+  const requestLogin = {
     data: {
       username: 'Eddylson22',
       password: '123455',
     },
   };
   const response = await request.post(urlLogin).send(requestLogin);
-  expect(response.status).toBe(401)
-  done()
-})
+  expect(response.status).toBe(401);
+  done();
+});
 afterAll(() => {
   server.close();
 });

@@ -17,4 +17,7 @@ export const mockFavoriteCurrency = {
   findByPk(id) {
     return Currencies.find((currency) => currency.id === id);
   },
+  findAll(id) {
+    return Currencies
+  }
 };
