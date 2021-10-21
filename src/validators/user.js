@@ -5,7 +5,7 @@ import middlewareUser from '../middlewares/user';
 
 export default function (services, db) {
   const favoriteCurrency = middlewareFavoriteCurrency(services, db);
-  const userMiddleware = middlewareUser(services,db)
+  const userMiddleware = middlewareUser(services, db);
   return {
     create: [
       check('data').isObject().withMessage('validators.data.Object'),

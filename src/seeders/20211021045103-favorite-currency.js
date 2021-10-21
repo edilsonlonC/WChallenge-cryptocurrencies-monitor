@@ -8,18 +8,18 @@ export default {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
-    */
-   await queryInterface.bulkInsert('favorite_currencies', [
-     {
-       name: 'usd'
-     },
-     {
-      name: 'eur'
-     },
-     {
-       name: 'ars' 
-     }
-   ])
+     */
+    await queryInterface.bulkInsert('favorite_currencies', [
+      {
+        name: 'usd',
+      },
+      {
+        name: 'eur',
+      },
+      {
+        name: 'ars',
+      },
+    ]);
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -29,6 +29,6 @@ export default {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulDelete('favorite_currencies', null, {})
-  }
+    await queryInterface.bulDelete('favorite_currencies', null, {});
+  },
 };

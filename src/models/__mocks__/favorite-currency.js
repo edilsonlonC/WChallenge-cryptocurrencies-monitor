@@ -18,6 +18,6 @@ export const mockFavoriteCurrency = {
     return Currencies.find((currency) => currency.id === id);
   },
   findAll(id) {
-    return Currencies
-  }
+    return Currencies;
+  },
 };
