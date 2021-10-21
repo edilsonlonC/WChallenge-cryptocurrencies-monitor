@@ -10,7 +10,7 @@ const request = supertest(app);
 const urlCurrencies = '/api/v1/currencies/favorite';
 
 it('Get currencies favorites success', async(done) => {
-    const response = await request.get(urlCurrencies);
+    const response = await request.get(urlCurrencies).set('Authorization', 'Bearer valid:token');
     expect(response.status).toBe(200);
     done();
 })
