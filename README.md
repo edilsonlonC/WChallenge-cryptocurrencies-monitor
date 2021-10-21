@@ -1,11 +1,11 @@
-# Pre requisitos
+## Pre requisitos
 <a href="https://www.npmjs.com/"> 
 <img src="https://img.shields.io/npm/v/npm"> </a>
 <a href="https://nodejs.org/es/"> 
 <img src="https://img.shields.io/badge/node%40latest-%3E%3D%2016.0.0-brightgreen"> 
 </a>
 
-# Herramientas usadas
+## Herramientas usadas
 <ul>
     <li> webpack </li>
     <li> sequelize </li>
@@ -13,7 +13,7 @@
     <li> mysql </li>
 </ul>
  
-# Instrucciones de instalación.
+## Instrucciones de instalación.
 
 ```bash
     git clone git@github.com:edilsonlonC/WChallenge-cryptocurrencies-monitor.git
@@ -32,7 +32,7 @@ Para generar el archivo empaquetado
 
 Quedara ejecutandose en segundo plano
 
-# Configuraciones
+## Configuraciones
 #### Las variables de entorno se pueden cargar desde el archivo .env
 
 ```
@@ -95,4 +95,4 @@ module.exports = {
 # Estructura del proyecto
 
 ## Rutas
-[a relative link](src/routes/README.md)
+## [doc](src/routes/README.md)
