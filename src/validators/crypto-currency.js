@@ -12,6 +12,7 @@ export default function (services, db) {
       validate,
       auth.checkAuth,
       middlewareCrypto.cryptoCurrencyExist,
+      middlewareCrypto.userHaveCryptoCurrency
     ],
     list: [auth.checkAuth],
     top: [
