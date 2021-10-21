@@ -5,4 +5,5 @@ export const config = {
   defaultLang: process.env.defaultLang || 'es',
   versionApi: process.env.versionApi || '/api/v1',
   minExpiredSession: process.env.minExpiredSession || 3600000 * 3,
+  port: process.env.PORT
 };
