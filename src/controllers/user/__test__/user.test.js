@@ -8,7 +8,7 @@ const requestBody = {
   data: {
     name: 'Edilson',
     surname: 'Londonio',
-    username: 'Eddylson2',
+    username: 'eddylson',
     password: '12345',
     passwordConfirmation: '12345',
     favorite_currencyId: 1,

@@ -1,10 +1,11 @@
 module.exports = {
-  apps : [{
-    name: 'coingeckowrapper',
-    script: './dist/server.js',
-    watch: true
-  }, 
-],
+  apps: [
+    {
+      name: 'coingeckowrapper',
+      script: './dist/server.js',
+      watch: true,
+    },
+  ],
 
   // deploy : {
   //   production : {

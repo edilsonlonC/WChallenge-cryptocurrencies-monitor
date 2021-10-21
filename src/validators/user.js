@@ -1,9 +1,11 @@
 import { check } from 'express-validator';
 import validate from '../middlewares/validate';
 import middlewareFavoriteCurrency from '../middlewares/favorite-currency';
+import middlewareUser from '../middlewares/user';
 
 export default function (services, db) {
   const favoriteCurrency = middlewareFavoriteCurrency(services, db);
+  const userMiddleware = middlewareUser(services, db);
   return {
     create: [
       check('data').isObject().withMessage('validators.data.Object'),
@@ -34,6 +36,7 @@ export default function (services, db) {
         .exists()
         .withMessage('validators.data.favorite_currencyId.isRequired'),
       validate,
+      userMiddleware.usernameExist,
       favoriteCurrency.favoriteCurrencyExist,
     ],
   };

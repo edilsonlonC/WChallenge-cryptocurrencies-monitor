@@ -2,6 +2,7 @@ import { query, check } from 'express-validator';
 import validate from '../middlewares/validate';
 import authMiddleware from '../middlewares/auth';
 import cryptoCurrencyMiddleware from '../middlewares/crypto-currency';
+
 export default function (services, db) {
   const auth = authMiddleware(services, db);
   const middlewareCrypto = cryptoCurrencyMiddleware(services, db);
@@ -12,7 +13,7 @@ export default function (services, db) {
       validate,
       auth.checkAuth,
       middlewareCrypto.cryptoCurrencyExist,
-      middlewareCrypto.userHaveCryptoCurrency
+      middlewareCrypto.userHaveCryptoCurrency,
     ],
     list: [auth.checkAuth],
     top: [

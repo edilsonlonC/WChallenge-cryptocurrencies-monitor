@@ -26,24 +26,24 @@ const mock = jest.fn().mockImplementation(() => {
         ],
       };
     },
-  getPrices: () =>{
-    return {
-      data: [
-        {
-          "bitcoin": {
-            "eur": 1,
-            "usd": 2,
-            "ars": 3,
+    getPrices: () => {
+      return {
+        data: [
+          {
+            bitcoin: {
+              eur: 1,
+              usd: 2,
+              ars: 3,
+            },
+            ethereum: {
+              eur: 4,
+              usd: 5,
+              ars: 6,
+            },
           },
-          "ethereum": {
-            "eur": 4,
-            "usd": 5,
-            "ars": 6,
-          }
-        }
-      ]
-    }
-  },
+        ],
+      };
+    },
   };
 });
 
