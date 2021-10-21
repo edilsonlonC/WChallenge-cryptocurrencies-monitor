@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --collect-coverage  --verbose  --detectOpenHandles --maxWorkers=1",
     "build": "webpack --config webpack.config.js",
-    "start": "babel-node src/app.js",
+    "start": "npm run build && pm2-runtime start ecosystem.config.js --env production",
     "dev": "nodemon --exec babel-node src/app.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
