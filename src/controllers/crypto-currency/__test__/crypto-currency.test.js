@@ -49,10 +49,21 @@ it('Crypto currency top limit', async (done) => {
 it('Crypto currency create success', async (done) => {
   const requestCrypto = {
     data: {
-      id: 'bitcoin'
+      id: 'tron'
     }
   }
   const response = await request.post(urlList).set('Authorization', 'Bearer valid:token').send(requestCrypto)
   expect(response.status).toBe(201);
+  done();
+})
+
+it('Crypto currency create exist by user' , async (done) => {
+  const requestCrypto = {
+    data: {
+      id: 'bitcoin'
+    }
+  }
+  const response = await request.post(urlList).set('Authorization', 'Bearer valid:token').send(requestCrypto)
+  expect(response.status).toBe(400);
   done();
 })

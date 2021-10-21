@@ -20,5 +20,9 @@ export const mockCryptoCurrency = {
     },
     create(data){
         return data
-    }
+    },
+    findOne(query){
+        const { where: { userId, id} } = query;
+        return cryptoCurrencies.find(crypto => crypto.userId === userId && crypto.id === id)
+        }
 }
