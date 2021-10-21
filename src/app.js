@@ -32,6 +32,7 @@ function run() {
   const router = express.Router();
   router.use('/auth', routes.Auth);
   router.use('/crypto', routes.CryptoCurrency);
+  router.use('/currencies', routes.FavoriteCurrency)
   router.use('/users', routes.User);
   app.use(config.versionApi, router);
   /* Error handling */
