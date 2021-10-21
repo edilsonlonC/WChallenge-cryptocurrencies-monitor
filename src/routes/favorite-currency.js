@@ -5,6 +5,6 @@ export default function (app, db, services) {
     const currerncyContoller = controllerCurrency(services,db)
     const validators = Validator(services,db)
 
-    router.get('/favorite', validators.list,currerncyContoller.list)
+    router.get('/favorite', currerncyContoller.list)
     return router;
 }
