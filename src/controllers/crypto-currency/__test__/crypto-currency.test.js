@@ -34,7 +34,6 @@ afterAll(() => {
 
 it('Crypto currency top success', async (done) => {
   const response = await request.get(urlTop).set('Authorization', 'Bearer valid:token')
-  console.log(response.body)
   expect(response.status).toBe(400)
   done()
 })
