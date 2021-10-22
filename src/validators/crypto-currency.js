@@ -8,7 +8,7 @@ export default function (services, db) {
   const middlewareCrypto = cryptoCurrencyMiddleware(services, db);
   return {
     create: [
-      check('data').isObject().withMessage('validators.data.isRequired'),
+      check('data').isObject().withMessage('validators.data.Object'),
       check('data.id').exists().withMessage('validators.data.id.isRequired'),
       validate,
       auth.checkAuth,

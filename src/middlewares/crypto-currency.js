@@ -11,6 +11,7 @@ export default function (services, db) {
       try {
         const data = await services.coinGecko.getCoins({ ids: [id] });
         if (data.data.length) return next();
+        console.log('hereee')
         return response(
           res,
           req
