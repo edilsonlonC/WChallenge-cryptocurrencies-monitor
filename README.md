@@ -98,11 +98,9 @@ module.exports = {
      npm run seed
 ```
 
-#### npm run migrate crea la base de datos por medio de las migraciones
+#### npm run migrate crea las tablas y columnas de la base de datos por medio de las migraciones en la carpeta src/migrations
 
-#### en la carpeta src/migrations
-
-#### y el comando npm run seed creara elementos de la base de datos necesarios
+#### y el comando npm run seed creará los elementos de la base de datos necesarios
 
 <br>
 

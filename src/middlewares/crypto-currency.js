@@ -47,20 +47,23 @@ export default function (services, db) {
       }
     },
     async userDontHaveCryptoCurrencies(req, res, next) {
-      const { id: userId }  = req.User;
+      const { id: userId } = req.User;
       try {
-        const totalCryptos  = await CryptoCurrency.count({
-          where: { userId }
-        })
-        totalCryptos > 0 ? next() : response(res,req)({
-          data: {count: totalCryptos,  CryptoCurrencies: []},
-          message: 'cryptoCurrencies.list'
-        }) 
-        
+        const totalCryptos = await CryptoCurrency.count({
+          where: { userId },
+        });
+        totalCryptos > 0
+          ? next()
+          : response(
+              res,
+              req
+            )({
+              data: { count: totalCryptos, CryptoCurrencies: [] },
+              message: 'cryptoCurrencies.list',
+            });
       } catch (error) {
-        return next(error)
-        
+        return next(error);
       }
-    }
+    },
   };
 }

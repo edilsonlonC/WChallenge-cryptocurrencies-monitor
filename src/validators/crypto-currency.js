@@ -22,7 +22,7 @@ export default function (services, db) {
         .withMessage('validators.query.top.invalidRange'),
       validate,
       auth.checkAuth,
-      middlewareCrypto.userDontHaveCryptoCurrencies
+      middlewareCrypto.userDontHaveCryptoCurrencies,
     ],
   };
 }
