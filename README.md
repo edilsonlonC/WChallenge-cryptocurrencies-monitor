@@ -34,6 +34,7 @@
     git clone git@github.com:edilsonlonC/WChallenge-cryptocurrencies-monitor.git
     cd WChallenge-cryptocurrencies-monitor
     cp .env-example .env
+    npm install
 ```
 
 ## Configuraciones
@@ -105,7 +106,12 @@ module.exports = {
 
 <br>
 
-##### Para generar el archivo empaquetado para producción
+### Para ejecutar el entorno de desarrollo
+``` bash
+  npm run dev
+```
+
+### Para generar el archivo empaquetado para producción
 
 ```bash
     npm run build
