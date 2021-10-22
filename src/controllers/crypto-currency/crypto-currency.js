@@ -24,7 +24,7 @@ export default function (services, db) {
           res,
           req
         )({
-          data: { count: cryptoCurrencies.length, CryptoCurrencies: cryptoCurrencies },
+          data: { page, per_page, CryptoCurrencies: cryptoCurrencies },
           message: 'cryptocurrencies.list',
         });
       } catch (error) {

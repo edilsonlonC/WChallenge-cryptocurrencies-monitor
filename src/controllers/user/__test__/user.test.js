@@ -172,7 +172,7 @@ it('User create when favorite currency does not exist', async (done) => {
   const expectResponse = {
     data: null,
     statusCode: 400,
-    message: 'El tipo de moneda no existe',
+    message: 'La divisa no existe',
   };
   expect(response.status).toBe(400);
   expect(response.body).toMatchObject(expectResponse);

@@ -62,7 +62,58 @@
 
 	},
 	"validators.favoriteCurrency.notExist": {
-		"es": "El tipo de moneda no existe",
-		"en": "Currency type doesn't exist"
-	}
+		"es": "La divisa no existe",
+		"en": "Currency doesn't exist"
+	},
+	"favorite.currency.list": {
+		"es": "Divisas",
+		"en": "Currency"
+	},
+	"validators.cryptoCurrency.exist": {
+		"es": "La crypto ya se encuentra en uso",
+		"en": "Crypto is already in use"
+	},
+	"crypto.created": {
+		"es": "Crypto creada exitosamente",
+		"en": "Crypto was created successfully"
+	},
+	"cryptocurrencies.list": {
+		"es": "Cryptos",
+		"en": "Cryptos"
+	},
+	"cryptoCurencies.list": {
+		"es": "Crypto monedas",
+		"en": "Cryptocurrencies"
+	},
+	"loginSuccess": {
+		"es": "Login correcto",
+		"en": "Correct login"
+	},
+	"validators.passwordOrUsername.invalid":{
+		"es": "Contraseña o usuario incorrectos",
+		"en": "Incorrect password or username"
+	},
+	"validators.Authorization.isRequired":{
+		"es": "Se requiere autorización",
+		"en": "Authorization is required"
+	},
+	"validators.token.invalid": {
+		"es": "Token invalido",
+		"en": "Invalid token"
+	},
+	"validators.username.exist": {
+		"es": "El nombre de usuario ya se encuentra en uso",
+		"en": "username is already in use"
+	},
+	"validators.data.id.isRequired":{
+		"es": "Campo id requerido",
+		"en": "id fields is required"
+	},
+	"validators.query.top.invalidRange": {
+		"es": "Campo top con rango invalido",
+		"en": "Field top invalid range"
+	}	
+
+	
+	
 }
