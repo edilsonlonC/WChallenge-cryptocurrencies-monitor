@@ -128,4 +128,4 @@ module.exports = {
 
 
 ## Base de datos
-### [Base de datos](src/models/README.md)
+### [Diagrama](src/models/README.md)
