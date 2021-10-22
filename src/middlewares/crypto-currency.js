@@ -11,7 +11,6 @@ export default function (services, db) {
       try {
         const data = await services.coinGecko.getCoins({ ids: [id] });
         if (data.data.length) return next();
-        console.log('hereee')
         return response(
           res,
           req
@@ -47,5 +46,21 @@ export default function (services, db) {
         return next(error);
       }
     },
+    async userDontHaveCryptoCurrencies(req, res, next) {
+      const { id: userId }  = req.User;
+      try {
+        const totalCryptos  = await CryptoCurrency.count({
+          where: { userId }
+        })
+        totalCryptos > 0 ? next() : response(res,req)({
+          data: {count: totalCryptos,  CryptoCurrencies: []},
+          message: 'cryptoCurrencies.list'
+        }) 
+        
+      } catch (error) {
+        return next(error)
+        
+      }
+    }
   };
 }
