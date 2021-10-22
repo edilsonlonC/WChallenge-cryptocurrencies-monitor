@@ -125,3 +125,7 @@ module.exports = {
 ## Servicios
 
 ### [Servicios coingecko](https://github.com/miscavage/CoinGecko-API)
+
+
+## Base de datos
+### [Diagrama](src/models/README.md)
