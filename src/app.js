@@ -39,7 +39,7 @@ function run() {
   app.use(_500());
 
   server = app.listen(port, () => {
-    console.log(`Server running`);
+    console.log(`Server running on port ${port}`);
   });
 }
 
